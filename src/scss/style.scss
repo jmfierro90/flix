@@ -1,0 +1,20 @@
+@import "fonts";
+
+$prmColor: #424242;
+$scnColor: #e6cc00;
+$prmFont: "Sunday";
+$fontColor: white;
+
+body{
+    background-color: $prmColor;
+    font-family: $prmFont;
+    color: $fontColor;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@import "sidebar";
+@import "finder";

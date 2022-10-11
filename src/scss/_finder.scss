@@ -1,0 +1,88 @@
+.finder {
+
+    /*   border radius */
+    $radius: 0.2rem;
+
+    *,
+    *::before,
+    *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+    .search {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    svg {
+        position: absolute;
+        cursor: pointer;
+    }
+
+    &__icon {
+        height: 35%;
+        left: -15px;
+        fill: $scnColor;
+        z-index: 99;
+        transition: 500ms fill ease-in-out, 500ms left ease-in-out;
+    }
+
+    &__delete {
+        height: 30%;
+        fill: $prmColor;
+        right: -5%;
+        opacity: 0;
+        transition: 500ms opacity ease-in-out;
+        pointer-events: none;
+    }
+
+    input {
+        box-shadow: 0 0 5px 1px $scnColor;
+        border: none;
+        border-radius: 50%;
+        padding: 8% 12%;
+        background-color: $prmColor;
+        font-family: inherit;
+        font-size: 1rem;
+
+        color: black;
+        outline: none;
+        width: 2rem;
+        transition: 500ms box-shadow ease-in-out, 500ms background-color ease-in-out, 500ms width ease-in-out, 500ms padding ease-in-out,
+        500ms border-radius ease-in-out;
+
+        &:not(:placeholder-shown) ~ .search__delete {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+    }
+
+    //open state
+    &-open input {
+        width: 100%;
+        padding: 8% 30% 8% 20%;
+        border-radius: $radius;
+        box-shadow: 0 0 5px 1px gray;
+        background-color: lightgray;
+    }
+
+    //when content is in text field show delete button
+    &-open  {
+
+        & svg{
+            &.search{
+                &__close{
+                    fill: black;
+                }
+                &__icon {
+                    fill: $prmColor;
+                    left:-20px
+                }
+            }
+        }
+        }
+    }
+}
