@@ -1,30 +1,20 @@
 import { useState } from "react";
-import styled from "styled-components";
 import { Button } from "./Button";
 
-const StyledFinder = styled.div`
-    width:90%;
-    margin: 5vh auto auto auto;
-    text-align:center
-`
-
-export const Finder = () => {
+export const Finder = ({setSubmited}) => {
 
     const [searchOpen, setSearchOpen] = useState(false);
-    const [animated, setAnimated] = useState(false)
+    const [animated, setAnimated] = useState(false);
     const [query, setQuery] = useState("");
 
     const toggleSearch = () => {
         setSearchOpen(!searchOpen);
         setQuery("");
-    }
-
-    const log = () => {
-        console.log("button")
+        setSubmited(null)
     }
 
     return (
-        <StyledFinder className="finder">
+        <div className="finder">
            <div className={searchOpen ? "search search-open" : "search"}>
 
                 <svg onClick={toggleSearch} className="search__icon" viewBox="0 0 512 512" width="95" title="search">
@@ -33,16 +23,16 @@ export const Finder = () => {
 
                 <input onChange={e => {setQuery(e.target.value); setAnimated(true)}} type="text" className="search__input" autoFocus placeholder=" " value={query}/>
 
-                <svg onClick={() => setQuery("")} className="search__delete" viewBox="0 0 640 512" width="100" title="backspace">
+                <svg onClick={() => {setQuery(""); setSubmited(null)}} className="search__delete" viewBox="0 0 640 512" width="100" title="backspace">
                     <path d="M576 64H205.26A63.97 63.97 0 0 0 160 82.75L9.37 233.37c-12.5 12.5-12.5 32.76 0 45.25L160 429.25c12 12 28.28 18.75 45.25 18.75H576c35.35 0 64-28.65 64-64V128c0-35.35-28.65-64-64-64zm-84.69 254.06c6.25 6.25 6.25 16.38 0 22.63l-22.62 22.62c-6.25 6.25-16.38 6.25-22.63 0L384 301.25l-62.06 62.06c-6.25 6.25-16.38 6.25-22.63 0l-22.62-22.62c-6.25-6.25-6.25-16.38 0-22.63L338.75 256l-62.06-62.06c-6.25-6.25-6.25-16.38 0-22.63l22.62-22.62c6.25-6.25 16.38-6.25 22.63 0L384 210.75l62.06-62.06c6.25-6.25 16.38-6.25 22.63 0l22.62 22.62c6.25 6.25 6.25 16.38 0 22.63L429.25 256l62.06 62.06z" />
                 </svg>
             </div>
 
             <Button className={`findBtn animate__animated ${query ? "animate__fadeInUp" : animated && " animate__fadeOutDown"}`}
-                    btnFunc={log} 
+                    btnFunc={() => setSubmited(query)} 
                     type="primary" 
                     content="Find Show"/>
 
-        </StyledFinder>
+        </div>
     )
 }
