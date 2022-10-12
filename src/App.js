@@ -3,7 +3,7 @@ import { Home } from "./components/Home";
 import { Presentation } from "./components/Presentation";
 import { SideBar } from "./components/layout/SideBar";
 import { Legal } from "./components/Legal";
-import { Finder } from "./components/layout/Finder";
+import { Finder } from "./components/Finder";
 
 function App() {
   return (
