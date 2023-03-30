@@ -43,23 +43,38 @@ body {
   bottom: 4vh;
 }
 
-.finder {
+.finder-grid {
+  -ms-grid-columns: revert;
+      grid-template-columns: revert;
+}
+
+.finder-grid .loading {
+  display: inline-block !important;
+  vertical-align: top;
+}
+
+.finder-grid .loading-text {
+  margin-right: 18px;
+  color: #e6cc00;
+}
+
+.finder-grid .finder {
   width: 90%;
   margin: 5vh auto auto auto;
   text-align: center;
   /*   border radius */
 }
 
-.finder *,
-.finder *::before,
-.finder *::after {
+.finder-grid .finder *,
+.finder-grid .finder *::before,
+.finder-grid .finder *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.finder .search {
+.finder-grid .finder .search {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -72,12 +87,12 @@ body {
           align-items: center;
 }
 
-.finder .search svg {
+.finder-grid .finder .search svg {
   position: absolute;
   cursor: pointer;
 }
 
-.finder .search__icon {
+.finder-grid .finder .search__icon {
   height: 35%;
   left: -22px;
   fill: #e6cc00;
@@ -86,7 +101,7 @@ body {
   transition: 500ms fill ease-in-out, 500ms left ease-in-out;
 }
 
-.finder .search__delete {
+.finder-grid .finder .search__delete {
   height: 30%;
   fill: #424242;
   right: -10%;
@@ -97,7 +112,7 @@ body {
   z-index: 1;
 }
 
-.finder .search input {
+.finder-grid .finder .search input {
   position: relative;
   -webkit-box-shadow: 0 0 5px 1px #e6cc00;
           box-shadow: 0 0 5px 1px #e6cc00;
@@ -116,12 +131,12 @@ body {
   transition: 500ms box-shadow ease-in-out, 500ms background-color ease-in-out, 500ms width ease-in-out, 500ms padding ease-in-out, 500ms border-radius ease-in-out, 500ms -webkit-box-shadow ease-in-out;
 }
 
-.finder .search input:not(:placeholder-shown) ~ .search__delete {
+.finder-grid .finder .search input:not(:placeholder-shown) ~ .search__delete {
   opacity: 1;
   pointer-events: all;
 }
 
-.finder .search-open input {
+.finder-grid .finder .search-open input {
   width: 100%;
   padding: 8% 30% 8% 20%;
   border-radius: 0.2rem;
@@ -130,16 +145,16 @@ body {
   background-color: lightgray;
 }
 
-.finder .search-open svg.search__close {
+.finder-grid .finder .search-open svg.search__close {
   fill: black;
 }
 
-.finder .search-open svg.search__icon {
+.finder-grid .finder .search-open svg.search__icon {
   fill: #424242;
   left: -1.5em;
 }
 
-.finder .findBtn {
+.finder-grid .finder .findBtn {
   opacity: 0;
   position: relative;
   -webkit-transition: 500ms border-radius ease-in-out, 500ms padding ease-in-out;
@@ -147,7 +162,7 @@ body {
   z-index: 0;
 }
 
-.finder .findBtn:after {
+.finder-grid .finder .findBtn:after {
   content: "";
   position: absolute;
   height: 18px;
@@ -166,12 +181,12 @@ body {
   transition: 200ms transform ease-in-out, 500ms padding ease-in-out, 200ms -webkit-transform ease-in-out;
 }
 
-.finder .findBtn:hover {
+.finder-grid .finder .findBtn:hover {
   padding: 0 0 0 0;
   border-radius: 0 0 0 0 !important;
 }
 
-.finder .findBtn:hover:after {
+.finder-grid .finder .findBtn:hover:after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
   -webkit-transition: 500ms padding ease-in-out, 500ms -webkit-transform ease-in-out;
@@ -180,5 +195,35 @@ body {
   transition: 500ms transform ease-in-out, 500ms padding ease-in-out, 500ms -webkit-transform ease-in-out;
   -webkit-transition-delay: .2s;
           transition-delay: .2s;
+}
+
+.show-card-content {
+  max-height: 417px;
+  padding-bottom: 15%;
+}
+
+.show-card-content h4 {
+  background-color: #e6cc00;
+  color: #424242;
+  padding: 10px 0;
+  margin-top: 0;
+}
+
+.show-card-content .bottom-poly {
+  bottom: 0;
+}
+
+.show-card-content .bottom-poly text {
+  font-weight: bold;
+  fill: #424242;
+}
+
+.show-card-content .bottom-poly .rating {
+  fill: red;
+  scale: .9;
+}
+
+.show-card-content img {
+  border: 5px inset #e6cc00;
 }
 /*# sourceMappingURL=style.css.map */

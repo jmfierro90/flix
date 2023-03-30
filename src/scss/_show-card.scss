@@ -1,0 +1,32 @@
+.show-card{
+    &-content{
+        max-height: 417px;
+        padding-bottom: 15%;
+
+        h4{
+            background-color: $scnColor;
+            color: $prmColor;
+            padding: 10px 0;
+            margin-top: 0;
+        }
+
+        .bottom-poly{
+            bottom: 0;
+
+            text{
+                font-weight: bold;
+                fill: $prmColor;
+            }
+
+            .rating{
+                fill: red;
+                scale: .9;
+            }
+
+        }
+
+        img{
+            border: 5px inset $scnColor;
+        }
+    }
+}

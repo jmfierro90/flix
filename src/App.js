@@ -13,11 +13,11 @@ function App() {
 
   return (
     <>
-      <GridLayout template="auto">
+      <GridLayout template="auto" width="100vw" height="100vh">
         <Presentation />
       </GridLayout>
 
-      <GridLayout template="15% 85%">
+      <GridLayout className="finder-grid" template="15% 85%" width="100vw" height="100vh">
 
           <SideBar bgColor="#303030">
             <Finder setSubmited={setSubmited}/>
