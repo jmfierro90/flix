@@ -1,4 +1,7 @@
 .show-card{
+    &:last-child {
+        margin-bottom: 100px !important;
+    }
     &-content{
         max-height: 417px;
         padding-bottom: 15%;

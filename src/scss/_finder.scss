@@ -1,6 +1,20 @@
 .finder-grid {
-    grid-template-columns: revert;
     
+    .shows-grid {
+        @media (max-width: 700px) {
+            grid-template-columns: auto !important;
+        }
+        @media (max-width: 1250px) {
+            grid-template-columns: auto auto;
+        }
+        @media (min-width: 2100px) {
+            grid-template-columns: auto auto auto auto;
+        }
+        @media (min-width: 2500px) {
+            grid-template-columns: auto auto auto auto auto;
+        }
+    }
+
     .loading {
         display: inline-block !important;
         vertical-align: top;
@@ -36,12 +50,21 @@
             position: absolute;
             cursor: pointer;
         }
+
+        &__icon-container {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            z-index: 99;
+        }
     
         &__icon {
+            position: absolute;
+            top: 33%;
+            left: 25%;
             height: 35%;
-            left: -22px;
             fill: $scnColor;
-            z-index: 99;
             transition: 500ms fill ease-in-out, 500ms left ease-in-out;
         }
     
@@ -81,7 +104,7 @@
         //open state
         &-open input {
             width: 100%;
-            padding: 8% 30% 8% 20%;
+            padding: 20px;
             border-radius: $radius;
             box-shadow: 0 0 5px 1px gray;
             background-color: lightgray;
@@ -89,6 +112,12 @@
     
         //when content is in text field show delete button
         &-open  {
+
+            .search__icon-container {
+                border-right: 1px solid $prmColor;
+                padding-right: 50px;
+                transition: border .5;
+            }
     
             & svg{
                 &.search{
@@ -97,7 +126,6 @@
                     }
                     &__icon {
                         fill: $prmColor;
-                        left: -1.5em
                     }
                 }
             }

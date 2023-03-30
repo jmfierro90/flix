@@ -4,16 +4,15 @@ import { GridLayout } from "./layout/GridLayout"
 import styled from "styled-components"
 import { LeapFrog } from '@uiball/loaders'
 
-
-
 const ShowCard = styled.div`
     text-align: center;
-    margin: 15px 30px 15px 30px;
+    margin: 0px auto 50px;
     background-color:#303030;
+    width: 300px;
 `
 const Loading = styled.div`
     text-align: center;
-    margin-top: 50%;
+    margin-top: 25%;
     font-size: 3.5em;
 `
 
@@ -44,7 +43,7 @@ export const Results = ({submitedQuery}) => {
         <GridLayout 
             className="shows-grid" 
             template="auto auto auto" 
-            width="100%" padding="20px 0 20px 0" 
+            width="100%" padding="50px 0 50px 0" 
             overflow="hidden scroll">
                 {data.map(mapShows)}
         </GridLayout>

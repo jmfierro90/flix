@@ -43,9 +43,32 @@ body {
   bottom: 4vh;
 }
 
-.finder-grid {
-  -ms-grid-columns: revert;
-      grid-template-columns: revert;
+@media (max-width: 700px) {
+  .finder-grid .shows-grid {
+    -ms-grid-columns: auto !important;
+        grid-template-columns: auto !important;
+  }
+}
+
+@media (max-width: 1250px) {
+  .finder-grid .shows-grid {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+
+@media (min-width: 2100px) {
+  .finder-grid .shows-grid {
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
+  }
+}
+
+@media (min-width: 2500px) {
+  .finder-grid .shows-grid {
+    -ms-grid-columns: auto auto auto auto auto;
+        grid-template-columns: auto auto auto auto auto;
+  }
 }
 
 .finder-grid .loading {
@@ -92,11 +115,20 @@ body {
   cursor: pointer;
 }
 
-.finder-grid .finder .search__icon {
-  height: 35%;
-  left: -22px;
-  fill: #e6cc00;
+.finder-grid .finder .search__icon-container {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 5px;
   z-index: 99;
+}
+
+.finder-grid .finder .search__icon {
+  position: absolute;
+  top: 33%;
+  left: 25%;
+  height: 35%;
+  fill: #e6cc00;
   -webkit-transition: 500ms fill ease-in-out, 500ms left ease-in-out;
   transition: 500ms fill ease-in-out, 500ms left ease-in-out;
 }
@@ -138,11 +170,18 @@ body {
 
 .finder-grid .finder .search-open input {
   width: 100%;
-  padding: 8% 30% 8% 20%;
+  padding: 20px;
   border-radius: 0.2rem;
   -webkit-box-shadow: 0 0 5px 1px gray;
           box-shadow: 0 0 5px 1px gray;
   background-color: lightgray;
+}
+
+.finder-grid .finder .search-open .search__icon-container {
+  border-right: 1px solid #424242;
+  padding-right: 50px;
+  -webkit-transition: border .5;
+  transition: border .5;
 }
 
 .finder-grid .finder .search-open svg.search__close {
@@ -151,7 +190,6 @@ body {
 
 .finder-grid .finder .search-open svg.search__icon {
   fill: #424242;
-  left: -1.5em;
 }
 
 .finder-grid .finder .findBtn {
@@ -195,6 +233,10 @@ body {
   transition: 500ms transform ease-in-out, 500ms padding ease-in-out, 500ms -webkit-transform ease-in-out;
   -webkit-transition-delay: .2s;
           transition-delay: .2s;
+}
+
+.show-card:last-child {
+  margin-bottom: 100px !important;
 }
 
 .show-card-content {
