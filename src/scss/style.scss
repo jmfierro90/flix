@@ -16,6 +16,7 @@ body{
     display: none;
 }
 
+@use 'media-query' as *;
 @import "sidebar";
 @import "finder";
 @import "utils";

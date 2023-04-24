@@ -1,16 +1,16 @@
 .finder-grid {
     
     .shows-grid {
-        @media (max-width: 700px) {
+        @include sm {
             grid-template-columns: auto !important;
         }
-        @media (max-width: 1250px) {
+        @include md {
             grid-template-columns: auto auto;
         }
-        @media (min-width: 2100px) {
+        @include lg {
             grid-template-columns: auto auto auto auto;
         }
-        @media (min-width: 2500px) {
+        @include xl {
             grid-template-columns: auto auto auto auto auto;
         }
     }
@@ -102,12 +102,15 @@
         }
     
         //open state
-        &-open input {
+        &-open input {  
             width: 100%;
             padding: 20px;
             border-radius: $radius;
             box-shadow: 0 0 5px 1px gray;
             background-color: lightgray;
+            @include sm {
+                padding-left: 70px !important;
+            }
         }
     
         //when content is in text field show delete button
